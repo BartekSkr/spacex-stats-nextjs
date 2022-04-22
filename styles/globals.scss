@@ -13,12 +13,7 @@ body {
   color: vars.$font-color;
 }
 
-.logo {
-  width: 400px;
-  display: block;
-  margin: auto;
-}
-
-.container {
-  display: flex;
+a {
+  color: inherit;
+  text-decoration: none;
 }

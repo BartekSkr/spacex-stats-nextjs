@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use './vars';
+
+.container {
+  @extend %about-404-container;
+
+  a {
+    color: vars.$font-color;
+    text-decoration: underline vars.$accent-color;
+  }
+}
+
+@media (max-width: map.get(vars.$breakpoints, lg)) {
+  .container {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: map.get(vars.$breakpoints, sm)) {
+  .container {
+    font-size: small;
+  }
+}
