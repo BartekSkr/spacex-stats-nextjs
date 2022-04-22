@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use './vars';
+
+.container {
+  font-size: larger;
+  display: block;
+  width: vars.$menu-width;
+  border-right: 2px solid red;
+  min-height: 88vh;
+
+  ul {
+    position: sticky;
+    top: 0;
+    list-style: none;
+    padding: 0;
+
+    .li {
+      transition: all 0.2s ease-in-out;
+      padding-top: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: map.get(vars.$breakpoints, lg)) {
+  .container {
+    font-size: large;
+    width: 20%;
+  }
+}
+
+@media (max-width: map.get(vars.$breakpoints, sm)) {
+  .container {
+    font-size: small;
+  }
+}

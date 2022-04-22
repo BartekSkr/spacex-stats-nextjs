@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
 import logo from '../public/logo.png';
+import { Nav } from '../components/Nav/Nav';
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       {/* <main> */}
       <div className={styles.logo}>
         <Image src={logo} />
+        <Nav />
       </div>
       {/* </main> */}
     </div>

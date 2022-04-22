@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../components/Button/Button';
 import styles from '../styles/About.module.scss';
 
 const about: React.FC = () => {
@@ -12,6 +13,7 @@ const about: React.FC = () => {
           <b>SpaceX API</b>
         </a>
       </p>
+      <Button name='&larr; Go home' to='/' />
     </div>
   );
 };
