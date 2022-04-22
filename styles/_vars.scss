@@ -1,0 +1,80 @@
+@use 'sass:map';
+
+$font-color: white;
+$accent-color: red;
+$background-color: black;
+$default-transition: 0.5s;
+$menu-width: 10%;
+
+$breakpoints: (
+  'xxl': '1400px',
+  'xl': '1200px',
+  'lg': '992px',
+  'md': '768px',
+  'sm': '576px',
+);
+
+%data-container {
+  margin: 0 2rem;
+  padding-top: 1rem;
+  width: calc(100% - #{$menu-width});
+  font-size: large;
+}
+
+%data-div {
+  position: relative;
+  padding: 0.5rem 2rem 2rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background-color: rgb(29, 29, 29);
+
+  b {
+    margin-right: 5px;
+  }
+
+  .success,
+  .fail {
+    margin-left: 5px;
+  }
+
+  .success {
+    color: green;
+  }
+
+  .fail {
+    color: red;
+  }
+
+  .details {
+    margin-top: 1rem;
+    padding-right: 2rem;
+  }
+
+  .status {
+    margin: 0;
+    display: flex;
+  }
+
+  img {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+%about-404-container {
+  width: 80%;
+  margin: 1.5rem auto 0 auto;
+
+  p {
+    font-size: larger;
+  }
+}
+
+@media (max-width: map.get($breakpoints, lg)) {
+  %data-container {
+    margin: 0 0.5rem;
+  }
+}
