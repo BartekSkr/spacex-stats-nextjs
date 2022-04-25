@@ -11,8 +11,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className={styles.container}>
         <main className={styles.main}>
           <Header />
-          <Nav />
-          {children}
+          <div className={styles.childrenContainer}>
+            <Nav />
+            {children}
+          </div>
         </main>
       </div>
     </>

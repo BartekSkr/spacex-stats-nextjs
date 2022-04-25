@@ -64,15 +64,6 @@ $breakpoints: (
   }
 }
 
-%about-404-container {
-  width: 80%;
-  margin: 1.5rem auto 0 auto;
-
-  p {
-    font-size: larger;
-  }
-}
-
 @media (max-width: map.get($breakpoints, lg)) {
   %data-container {
     margin: 0 0.5rem;
