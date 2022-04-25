@@ -6,7 +6,7 @@ export const Nav = () => {
     <div className={styles.container}>
       <ul>
         <li className={styles.li}>
-          <Link href='/'>Launches</Link>
+          <Link href='/launches'>Launches</Link>
         </li>
         <li className={styles.li}>
           <Link href='/rockets'>Rockets</Link>

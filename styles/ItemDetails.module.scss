@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use './vars';
+
+.container {
+  @extend %data-div;
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: map.get(vars.$breakpoints, md)) {
+  .container {
+    img {
+      display: none;
+    }
+  }
+}

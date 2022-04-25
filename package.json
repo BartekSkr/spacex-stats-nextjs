@@ -7,10 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "nodemon server.js",
+    "server": "nodemon pages/api/server.js",
     "develop": "concurrently \"npm run server\" \"npm run dev\""
   },
   "dependencies": {
+    "@apollo/client": "^3.5.10",
     "axios": "^0.26.1",
     "concurrently": "^7.1.0",
     "cors": "^2.8.5",
