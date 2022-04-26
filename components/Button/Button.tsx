@@ -4,7 +4,7 @@ import styles from '../../styles/Button.module.scss';
 
 export const Button: React.FC<ButtonProps> = ({ name, to }) => {
   return (
-    <Link href={to}>
+    <Link href={to} passHref>
       <button className={styles.button}>{name}</button>
     </Link>
   );

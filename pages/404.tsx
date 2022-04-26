@@ -6,7 +6,7 @@ const page404 = () => {
   return (
     <div className={styles.container}>
       <h1>404</h1>
-      <p>Oops, sorry we can't find that page.</p>
+      <p>Oops, sorry we can&apos;t find that page.</p>
       <Button name='&larr; Go to home page' to='/' />
     </div>
   );

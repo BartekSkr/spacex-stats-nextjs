@@ -9,7 +9,11 @@ const about: React.FC = () => {
       <p>This app shows SpaceX launches & rockets.</p>
       <p>
         Api comes from{' '}
-        <a href='https://github.com/r-spacex/SpaceX-API' target='_blank'>
+        <a
+          href='https://github.com/r-spacex/SpaceX-API'
+          target='_blank'
+          rel='noreferrer'
+        >
           <b>SpaceX API</b>
         </a>
       </p>
