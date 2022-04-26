@@ -49,15 +49,15 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({
             <div className={styles.details}>
               <b>Failures:</b>
               <br />
-              time: {launchFailures[0].time} s
+              time: {launchFailures![0].time} s
               <br />
               altitude:{' '}
-              {launchFailures[0].altitude !== null
-                ? launchFailures[0].altitude
+              {launchFailures![0].altitude !== null
+                ? launchFailures![0].altitude
                 : 0}{' '}
               m
               <br />
-              reason: {launchFailures[0].reason}
+              reason: {launchFailures![0].reason}
             </div>
           )}
           {launchBadge !== null && <img src={launchBadge} alt='launch badge' />}
@@ -84,7 +84,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({
           {details}.
         </p>
       )}
-      <Button name='&larr; Go back' to={launches ? '/' : '/rockets'} />
+      <Button name='&larr; Go back' to={launches ? '/launches' : '/rockets'} />
     </div>
   );
 };

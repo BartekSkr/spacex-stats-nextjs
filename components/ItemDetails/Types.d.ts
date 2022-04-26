@@ -5,7 +5,11 @@ export interface ItemDetailsProps {
   startDate: string; // launches & rockets
   details: string; // launches & rockets
   launchBadge?: string; // launches
-  launchFailures?: any; // launches
+  launchFailures?: {
+    time: number;
+    altitude: number | null;
+    reason: string;
+  }[]; // launches
   rocketHeight?: number; // rockets
   rocketMass?: number; // rockets
   launchRocketName?: string; // launches
