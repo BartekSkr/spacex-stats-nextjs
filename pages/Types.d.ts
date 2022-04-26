@@ -8,3 +8,9 @@ export interface LaunchesInterface {
   name: string;
   id: string;
 }
+
+export interface RocketsInterface {
+  name: string;
+  active: boolean;
+  id: string;
+}
