@@ -18,6 +18,19 @@
       transition: all 0.2s ease-in-out;
       padding-top: 2rem;
       text-align: center;
+
+      .link {
+        text-decoration: none;
+        color: vars.$font-color;
+        transition: color vars.$default-transition;
+
+        &Active {
+          color: vars.$font-color;
+          border-bottom: 3px solid vars.$accent-color;
+          text-decoration: none;
+          transition: color vars.$default-transition;
+        }
+      }
     }
   }
 }
