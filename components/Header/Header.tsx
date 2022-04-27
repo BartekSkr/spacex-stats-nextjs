@@ -5,7 +5,7 @@ import logo from '../../public/logo.png';
 export const Header = () => {
   return (
     <div className={styles.logo}>
-      <Image className={styles.image} src={logo} alt='SpaceX logo' />
+      <Image src={logo} alt='SpaceX logo' />
     </div>
   );
 };

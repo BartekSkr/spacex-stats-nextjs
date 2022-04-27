@@ -15,20 +15,41 @@
     padding: 0;
 
     .li {
-      transition: all 0.2s ease-in-out;
       padding-top: 2rem;
       text-align: center;
 
       .link {
+        display: inline-block;
         text-decoration: none;
         color: vars.$font-color;
-        transition: color vars.$default-transition;
+        transition: color vars.$default-transition-duration;
+
+        &::after {
+          display: block;
+          content: '';
+          border-bottom: solid 3px vars.$accent-color;
+          transform: scaleX(0);
+          transition: transform 250ms ease-in-out;
+        }
+
+        &:hover {
+          color: vars.$accent-color;
+          transition: color vars.$default-transition-duration;
+
+          &::after {
+            transform: scaleX(1);
+          }
+        }
 
         &Active {
           color: vars.$font-color;
           border-bottom: 3px solid vars.$accent-color;
           text-decoration: none;
-          transition: color vars.$default-transition;
+
+          &:hover {
+            color: vars.$accent-color;
+            transition: color vars.$default-transition-duration;
+          }
         }
       }
     }

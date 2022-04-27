@@ -12,7 +12,9 @@ export const Nav = () => {
           <Link href='/launches'>
             <a
               className={
-                router.pathname === '/launches' ? `${styles.linkActive}` : ''
+                router.pathname === '/launches'
+                  ? `${styles.linkActive}`
+                  : `${styles.link}`
               }
             >
               Launches
@@ -23,7 +25,9 @@ export const Nav = () => {
           <Link href='/rockets'>
             <a
               className={
-                router.pathname === '/rockets' ? `${styles.linkActive}` : ''
+                router.pathname === '/rockets'
+                  ? `${styles.linkActive}`
+                  : `${styles.link}`
               }
             >
               Rockets
@@ -34,7 +38,9 @@ export const Nav = () => {
           <Link href='/about'>
             <a
               className={
-                router.pathname === '/about' ? `${styles.linkActive}` : ''
+                router.pathname === '/about'
+                  ? `${styles.linkActive}`
+                  : `${styles.link}`
               }
             >
               About

@@ -9,11 +9,11 @@
   background: grey;
   margin-top: 1.5rem;
   padding: 10px;
-  transition: transform 0.2s;
+  transition: all 0.3s;
 
   &:hover {
     background: rgb(255, 80, 80);
     transform: scale(1.1);
-    transition: transform 0.2s;
+    transition: all 0.3s;
   }
 }
