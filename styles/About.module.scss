@@ -11,9 +11,11 @@
     a {
       color: vars.$font-color;
       text-decoration: underline vars.$accent-color;
+      transition: color vars.$default-transition-duration;
 
       &:hover {
         color: vars.$accent-color;
+        transition: color vars.$default-transition-duration;
       }
     }
   }
