@@ -4,9 +4,9 @@
 .container {
   @extend %data-div;
 
-  img {
-    top: 1.5rem;
-    right: 1.5rem;
+  .imageContainer {
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -15,7 +15,7 @@
     margin: 0 1rem 1rem 1rem;
     font-size: smaller;
 
-    img {
+    .imageContainer {
       margin-top: 0.5rem;
       height: 70px;
       width: 70px;

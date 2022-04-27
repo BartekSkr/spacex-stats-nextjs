@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import styles from '../../styles/Item.module.scss';
 import { Button } from '../Button/Button';
@@ -22,7 +23,14 @@ export const Item: React.FC<ItemProps> = ({ launches, item }) => {
             )}
           </div>
           {item.links!.patch.small !== null && (
-            <img src={item.links!.patch.small} alt='launch badge' />
+            <div className={styles.imageContainer}>
+              <Image
+                src={item.links!.patch.small}
+                alt='launch badge'
+                layout='fill'
+                priority
+              />
+            </div>
           )}
         </>
       )}

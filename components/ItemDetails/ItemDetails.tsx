@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import {
   dataFormat,
@@ -60,7 +61,16 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({
               reason: {launchFailures![0].reason}
             </div>
           )}
-          {launchBadge !== null && <img src={launchBadge} alt='launch badge' />}
+          {launchBadge !== null && (
+            <div className={styles.imageContainer}>
+              <Image
+                src={launchBadge!}
+                alt='launch badge'
+                layout='fill'
+                priority
+              />
+            </div>
+          )}
         </>
       )}
       {/* code only for rocket */}
