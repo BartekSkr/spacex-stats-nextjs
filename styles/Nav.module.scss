@@ -15,20 +15,27 @@
     padding: 0;
 
     .li {
-      transition: all 0.2s ease-in-out;
       padding-top: 2rem;
       text-align: center;
+
+      a {
+        transition: color vars.$default-transition-duration;
+
+        &:hover {
+          color: vars.$accent-color;
+          transition: color vars.$default-transition-duration;
+        }
+      }
 
       .link {
         text-decoration: none;
         color: vars.$font-color;
-        transition: color vars.$default-transition;
+        transition: color vars.$default-transition-duration;
 
         &Active {
           color: vars.$font-color;
           border-bottom: 3px solid vars.$accent-color;
           text-decoration: none;
-          transition: color vars.$default-transition;
         }
       }
     }

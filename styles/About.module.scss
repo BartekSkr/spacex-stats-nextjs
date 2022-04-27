@@ -11,6 +11,10 @@
     a {
       color: vars.$font-color;
       text-decoration: underline vars.$accent-color;
+
+      &:hover {
+        color: vars.$accent-color;
+      }
     }
   }
 }
