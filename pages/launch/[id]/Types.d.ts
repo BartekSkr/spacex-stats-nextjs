@@ -23,9 +23,3 @@ export interface LaunchProps {
     success: boolean;
   };
 }
-
-export interface PropsInterface {
-  params: {
-    id: string;
-  };
-}

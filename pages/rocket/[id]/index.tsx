@@ -1,10 +1,11 @@
+import { GetStaticPropsContext } from 'next';
 import React from 'react';
 import { ItemDetails } from '../../../components/ItemDetails/ItemDetails';
 import { Spinner } from '../../../components/Spinner/Spinner';
 import styles from '../../../styles/Rocket.module.scss';
 import { ROCKET_SCHEMA } from '../../api/schemas/schemas';
 import { client } from '../../_app';
-import { PropsInterface, RocketsProps } from './Types';
+import { RocketsProps } from './Types';
 
 const rocket: React.FC<RocketsProps> = ({ rocket, loading }) => {
   return (
@@ -25,12 +26,10 @@ const rocket: React.FC<RocketsProps> = ({ rocket, loading }) => {
   );
 };
 
-export const getServerSideProps = async ({
-  params: { id },
-}: PropsInterface) => {
+export const getServerSideProps = async (context: GetStaticPropsContext) => {
   const { data, loading } = await client.query({
     query: ROCKET_SCHEMA,
-    variables: { id: id },
+    variables: { id: context.params?.id },
   });
 
   return {

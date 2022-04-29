@@ -16,9 +16,3 @@ export interface RocketsProps {
     };
   };
 }
-
-export interface PropsInterface {
-  params: {
-    id: string;
-  };
-}
