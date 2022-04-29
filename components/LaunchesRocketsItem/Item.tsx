@@ -4,13 +4,13 @@ import styles from '../../styles/Item.module.scss';
 import { Button } from '../Button/Button';
 import { ItemProps } from './Types';
 
-export const Item: React.FC<ItemProps> = ({ launches, item }) => {
+export const Item: React.FC<ItemProps> = ({ isLaunches, item }) => {
   return (
     <div className={styles.container}>
       {/* common code for launches & rockets */}
       <h2>{item.name}</h2>
       {/* code only for launches */}
-      {launches && (
+      {isLaunches && (
         <>
           <div className={styles.status}>
             <p>
@@ -35,7 +35,7 @@ export const Item: React.FC<ItemProps> = ({ launches, item }) => {
         </>
       )}
       {/* code only for rockets */}
-      {!launches && (
+      {!isLaunches && (
         <>
           <div className={styles.status}>
             <p>
@@ -51,8 +51,8 @@ export const Item: React.FC<ItemProps> = ({ launches, item }) => {
       )}
       {/* common code for launches & rockets */}
       <Button
-        name={launches ? 'Launch Details' : 'Rocket Details'}
-        to={launches ? `/launch/${item.id}` : `/rocket/${item.id}`}
+        name={isLaunches ? 'Launch Details' : 'Rocket Details'}
+        to={isLaunches ? `/launch/${item.id}` : `/rocket/${item.id}`}
       />
     </div>
   );

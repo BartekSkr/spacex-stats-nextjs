@@ -1,5 +1,5 @@
 export interface ItemProps {
-  launches: boolean; //  launches & rockets
+  isLaunches: boolean; //  launches & rockets
   item: {
     name: string; //  launches & rockets
     id: string; //  launches & rockets
