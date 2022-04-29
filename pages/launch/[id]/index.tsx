@@ -3,7 +3,7 @@ import React from 'react';
 import { ItemDetails } from '../../../components/ItemDetails/ItemDetails';
 import { Spinner } from '../../../components/Spinner/Spinner';
 import styles from '../../../styles/Launch.module.scss';
-import { LAUNCH_SCHEMA } from '../../api/schemas/schemas';
+import { LAUNCHES_SCHEMA, LAUNCH_SCHEMA } from '../../api/schemas/schemas';
 import { client } from '../../_app';
 import { LaunchProps } from './Types';
 
@@ -27,7 +27,7 @@ const launch: React.FC<LaunchProps> = ({ launch, loading }) => {
   );
 };
 
-export const getServerSideProps = async (context: GetStaticPropsContext) => {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   const { data, loading } = await client.query({
     query: LAUNCH_SCHEMA,
     variables: { id: context.params?.id },
@@ -38,6 +38,17 @@ export const getServerSideProps = async (context: GetStaticPropsContext) => {
       launch: data.launch,
       loading: loading,
     },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const { data } = await client.query({ query: LAUNCHES_SCHEMA });
+  const ids = data.launches.map((launch: any) => launch.id);
+  const paths = ids.map((id: string) => ({ params: { id: id } }));
+
+  return {
+    paths,
+    fallback: false,
   };
 };
 

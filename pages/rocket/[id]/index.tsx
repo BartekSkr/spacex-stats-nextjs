@@ -3,7 +3,7 @@ import React from 'react';
 import { ItemDetails } from '../../../components/ItemDetails/ItemDetails';
 import { Spinner } from '../../../components/Spinner/Spinner';
 import styles from '../../../styles/Rocket.module.scss';
-import { ROCKET_SCHEMA } from '../../api/schemas/schemas';
+import { ROCKETS_SCHEMA, ROCKET_SCHEMA } from '../../api/schemas/schemas';
 import { client } from '../../_app';
 import { RocketsProps } from './Types';
 
@@ -26,7 +26,7 @@ const rocket: React.FC<RocketsProps> = ({ rocket, loading }) => {
   );
 };
 
-export const getServerSideProps = async (context: GetStaticPropsContext) => {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   const { data, loading } = await client.query({
     query: ROCKET_SCHEMA,
     variables: { id: context.params?.id },
@@ -37,6 +37,17 @@ export const getServerSideProps = async (context: GetStaticPropsContext) => {
       rocket: data.rocket,
       loading: loading,
     },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const { data } = await client.query({ query: ROCKETS_SCHEMA });
+  const ids = data.rockets.map((rocket: any) => rocket.id);
+  const paths = ids.map((id: string) => ({ params: { id: id } }));
+
+  return {
+    paths,
+    fallback: false,
   };
 };
 
