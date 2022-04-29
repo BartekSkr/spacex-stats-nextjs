@@ -3,10 +3,10 @@ import { Item } from '../components/LaunchesRocketsItem/Item';
 import { Spinner } from '../components/Spinner/Spinner';
 import styles from '../styles/Launches.module.scss';
 import { LAUNCHES_SCHEMA } from './api/schemas/schemas';
-import { LaunchesInterface } from './Types';
+import { LaunchesInterface, LaunchesProps } from './Types';
 import { client } from './_app';
 
-const launches: React.FC<any> = ({ launches, loading }) => {
+const launches: React.FC<LaunchesProps> = ({ launches, loading }) => {
   return (
     <div className={styles.container}>
       {loading && <Spinner />}
@@ -22,7 +22,7 @@ const launches: React.FC<any> = ({ launches, loading }) => {
 };
 
 export const getServerSideProps = async () => {
-  const { data, loading } = await client.query(LAUNCHES_SCHEMA);
+  const { data, loading } = await client.query({ query: LAUNCHES_SCHEMA });
 
   return {
     props: {

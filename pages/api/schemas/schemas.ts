@@ -1,34 +1,32 @@
 import { gql } from '@apollo/client';
 
 // schema for all launches
-export const LAUNCHES_SCHEMA = {
-  query: gql`
-    query Launches {
-      launches {
-        links {
-          patch {
-            small
-          }
+export const LAUNCHES_SCHEMA = gql`
+  query Launches {
+    launches {
+      links {
+        patch {
+          small
         }
-        failures {
-          time
-          altitude
-          reason
-        }
-        rocket {
-          name
-          id
-        }
-        success
+      }
+      failures {
+        time
+        altitude
+        reason
+      }
+      rocket {
         name
-        details
-        flight_number
-        date_local
         id
       }
+      success
+      name
+      details
+      flight_number
+      date_local
+      id
     }
-  `,
-};
+  }
+`;
 
 //  schema for launch searched by id
 export const LAUNCH_SCHEMA = gql`
@@ -59,27 +57,25 @@ export const LAUNCH_SCHEMA = gql`
 `;
 
 //  schema for all rockets
-export const ROCKETS_SCHEMA = {
-  query: gql`
-    query Rockets {
-      rockets {
-        height {
-          meters
-          feet
-        }
-        mass {
-          kg
-          lb
-        }
-        name
-        active
-        first_flight
-        description
-        id
+export const ROCKETS_SCHEMA = gql`
+  query Rockets {
+    rockets {
+      height {
+        meters
+        feet
       }
+      mass {
+        kg
+        lb
+      }
+      name
+      active
+      first_flight
+      description
+      id
     }
-  `,
-};
+  }
+`;
 
 //  schema for rocket searched by id
 export const ROCKET_SCHEMA = gql`

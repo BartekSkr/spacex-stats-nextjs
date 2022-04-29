@@ -1,13 +1,12 @@
-import { useQuery } from '@apollo/client';
 import React from 'react';
 import { Item } from '../components/LaunchesRocketsItem/Item';
 import { Spinner } from '../components/Spinner/Spinner';
 import styles from '../styles/Rockets.module.scss';
 import { ROCKETS_SCHEMA } from './api/schemas/schemas';
-import { RocketsInterface } from './Types';
+import { RocketsInterface, RocketsProps } from './Types';
 import { client } from './_app';
 
-const rockets: React.FC<any> = ({ rockets, loading }) => {
+const rockets: React.FC<RocketsProps> = ({ rockets, loading }) => {
   return (
     <div className={styles.container}>
       {loading && <Spinner />}
@@ -23,7 +22,7 @@ const rockets: React.FC<any> = ({ rockets, loading }) => {
 };
 
 export const getServerSideProps = async () => {
-  const { data, loading } = await client.query(ROCKETS_SCHEMA);
+  const { data, loading } = await client.query({ query: ROCKETS_SCHEMA });
 
   return {
     props: {
