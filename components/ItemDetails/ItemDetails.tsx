@@ -46,7 +46,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({
             <b>Rocket: </b>
             {launchRocketName}
           </p>
-          {!successActive && (
+          {!successActive && launchFailures?.length !== 0 && (
             <div className={styles.details}>
               <b>Failures:</b>
               <br />
