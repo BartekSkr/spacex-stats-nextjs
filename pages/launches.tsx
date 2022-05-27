@@ -7,8 +7,15 @@ import { LAUNCHES_SCHEMA } from './api/schemas/schemas';
 import { LaunchesInterface } from './Types';
 import { client } from './_app';
 
-// const launches: React.FC<LaunchesProps> = ({ launches, loading }) => {
 const launches: React.FC = () => {
+  return (
+    <>
+      <Launches />
+    </>
+  );
+};
+
+const Launches = () => {
   const launchesQuery = useQuery(LAUNCHES_SCHEMA);
 
   return (
@@ -37,16 +44,5 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-// export const getServerSideProps = async () => {
-//   const { data, loading } = await client.query({ query: LAUNCHES_SCHEMA });
-
-//   return {
-//     props: {
-//       launches: data.launches,
-//       loading: loading,
-//     },
-//   };
-// };
 
 export default launches;
