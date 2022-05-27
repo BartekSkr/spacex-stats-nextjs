@@ -1,18 +1,22 @@
+import { useQuery } from '@apollo/client';
 import React from 'react';
 import { Item } from '../components/LaunchesRocketsItem/Item';
 import { Spinner } from '../components/Spinner/Spinner';
 import styles from '../styles/Launches.module.scss';
 import { LAUNCHES_SCHEMA } from './api/schemas/schemas';
-import { LaunchesInterface, LaunchesProps } from './Types';
+import { LaunchesInterface } from './Types';
 import { client } from './_app';
 
-const launches: React.FC<LaunchesProps> = ({ launches, loading }) => {
+// const launches: React.FC<LaunchesProps> = ({ launches, loading }) => {
+const launches: React.FC = () => {
+  const launchesQuery = useQuery(LAUNCHES_SCHEMA);
+
   return (
     <div className={styles.container}>
-      {loading && <Spinner />}
-      {!loading && (
+      {launchesQuery.loading && <Spinner />}
+      {!launchesQuery.loading && launchesQuery.data && (
         <>
-          {launches.map((launch: LaunchesInterface) => (
+          {launchesQuery.data.launches.map((launch: LaunchesInterface) => (
             <Item key={launch.id} isLaunches={true} item={launch} />
           ))}
         </>
@@ -21,8 +25,10 @@ const launches: React.FC<LaunchesProps> = ({ launches, loading }) => {
   );
 };
 
-export const getServerSideProps = async () => {
-  const { data, loading } = await client.query({ query: LAUNCHES_SCHEMA });
+export const getStaticProps = async () => {
+  const { data, loading } = await client.query({
+    query: LAUNCHES_SCHEMA,
+  });
 
   return {
     props: {
@@ -31,5 +37,16 @@ export const getServerSideProps = async () => {
     },
   };
 };
+
+// export const getServerSideProps = async () => {
+//   const { data, loading } = await client.query({ query: LAUNCHES_SCHEMA });
+
+//   return {
+//     props: {
+//       launches: data.launches,
+//       loading: loading,
+//     },
+//   };
+// };
 
 export default launches;
