@@ -7,15 +7,7 @@ import { ROCKETS_SCHEMA } from './api/schemas/schemas';
 import { RocketsInterface } from './Types';
 import { client } from './_app';
 
-const rockets: React.FC = () => {
-  return (
-    <>
-      <Rockets />
-    </>
-  );
-};
-
-const Rockets = () => {
+const Rockets: React.FC = () => {
   const rocketsQuery = useQuery(ROCKETS_SCHEMA);
 
   return (
@@ -45,4 +37,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default rockets;
+export default Rockets;

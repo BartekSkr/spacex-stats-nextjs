@@ -7,15 +7,7 @@ import { LAUNCHES_SCHEMA } from './api/schemas/schemas';
 import { LaunchesInterface } from './Types';
 import { client } from './_app';
 
-const launches: React.FC = () => {
-  return (
-    <>
-      <Launches />
-    </>
-  );
-};
-
-const Launches = () => {
+const Launches: React.FC = () => {
   const launchesQuery = useQuery(LAUNCHES_SCHEMA);
 
   return (
@@ -45,4 +37,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default launches;
+export default Launches;
