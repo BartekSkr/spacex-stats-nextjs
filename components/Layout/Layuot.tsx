@@ -1,6 +1,6 @@
 import { Header } from '../Header/Header';
 import { Meta } from '../Meta/Meta';
-import { Nav } from '../Nav/Nav';
+import { Navbar } from '../Navbar/Navbar';
 import { LayoutProps } from './Types';
 import styles from '../../styles/Layout.module.scss';
 
@@ -12,7 +12,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         <main className={styles.main}>
           <Header />
           <div className={styles.childrenContainer}>
-            <Nav />
+            <Navbar />
             {children}
           </div>
         </main>

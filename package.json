@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "server": "nodemon pages/api/server.js",
-    "develop": "concurrently \"npm run server\" \"npm run dev\""
+    "develop": "concurrently \"yarn run server\" \"yarn run dev\""
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
