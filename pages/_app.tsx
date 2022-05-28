@@ -4,7 +4,6 @@ import { Layout } from '../components/Layout/Layuot';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 export const client = new ApolloClient({
-  // uri: '/graphql',
   uri: 'http://localhost:3001/graphql',
   cache: new InMemoryCache({ addTypename: false }),
   connectToDevTools: true,

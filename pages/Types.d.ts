@@ -1,3 +1,20 @@
+export interface LaunchesInterface {
+  links: {
+    patch: {
+      small: string;
+    };
+  };
+  success: boolean;
+  name: string;
+  id: string;
+}
+
+export interface RocketsInterface {
+  name: string;
+  active: boolean;
+  id: string;
+}
+
 export interface LaunchesProps {
   loading: boolean;
   launches: {
@@ -24,17 +41,6 @@ export interface LaunchesProps {
   }[];
 }
 
-export interface LaunchesInterface {
-  links: {
-    patch: {
-      small: string;
-    };
-  };
-  success: boolean;
-  name: string;
-  id: string;
-}
-
 export interface RocketsProps {
   loading: boolean;
   rockets: {
@@ -52,10 +58,4 @@ export interface RocketsProps {
       lb: number;
     };
   }[];
-}
-
-export interface RocketsInterface {
-  name: string;
-  active: boolean;
-  id: string;
 }
