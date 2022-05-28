@@ -16,5 +16,4 @@ To build static site:
 ```
 $ yarn develop
 $ yarn build
-$ serve -s out -p 8000
 ```
