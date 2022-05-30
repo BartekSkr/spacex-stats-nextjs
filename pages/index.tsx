@@ -4,7 +4,18 @@ import styles from '../styles/Home.module.scss';
 const home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <h2>The app shows SpaceX launches & rockets stats</h2>
+      <h1>
+        The app shows{' '}
+        <a
+          className={styles.link}
+          href='https://www.spacex.com/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          SpaceX
+        </a>{' '}
+        launches & rockets stats
+      </h1>
     </div>
   );
 };

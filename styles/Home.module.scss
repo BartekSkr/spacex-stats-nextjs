@@ -1,3 +1,29 @@
+@use '../styles/vars';
+
 .container {
   margin: 1rem auto;
+
+  .link {
+    display: inline-block;
+    text-decoration: none;
+    color: vars.$accent-color;
+    transition: color vars.$default-transition-duration;
+
+    &::after {
+      display: block;
+      content: '';
+      border-bottom: solid 3px vars.$accent-color;
+      transform: scaleX(0);
+      transition: transform 250ms ease-in-out;
+    }
+
+    &:hover {
+      color: vars.$accent-color;
+      transition: color vars.$default-transition-duration;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
 }
