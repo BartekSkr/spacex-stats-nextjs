@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Frockets","\u002Flaunches","\u002Frocket\u002F[id]","\u002Flaunch\u002F[id]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
