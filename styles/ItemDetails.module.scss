@@ -12,6 +12,8 @@
 
 @media (max-width: map.get(vars.$breakpoints, md)) {
   .container {
+    margin: 0 1rem;
+
     .imageContainer {
       display: none;
     }

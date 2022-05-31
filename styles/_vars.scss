@@ -29,6 +29,10 @@ $breakpoints: (
   border-radius: 1rem;
   background-color: rgb(29, 29, 29);
 
+  p {
+    margin: 0 0 0.5rem 0;
+  }
+
   b {
     margin-right: 5px;
   }
