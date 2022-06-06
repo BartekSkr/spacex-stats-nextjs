@@ -10,12 +10,12 @@ To run app locally:
 
 ```
 $ yarn
-$ yarn develop
+$ yarn dev
 ```
 
 To build static site:
 
 ```
-$ yarn develop
+$ yarn dev
 $ yarn build
 ```
