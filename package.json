@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "develop": "next dev",
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "server": "nodemon pages/api/server.js",
-    "develop": "concurrently \"yarn run server\" \"yarn run dev\""
+    "dev": "concurrently \"yarn run server\" \"yarn run develop\""
   },
   "dependencies": {
-    "@apollo/client": "^3.5.10",
+    "@apollo/client": "^3.6.6",
     "axios": "^0.27.2",
     "concurrently": "^7.1.0",
     "cors": "^2.8.5",
@@ -23,14 +23,14 @@
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.36",
-    "@types/react": "^18.0.9",
+    "@types/node": "^17.0.40",
+    "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
-    "eslint": "^8.16.0",
+    "eslint": "^8.17.0",
     "eslint-config-next": "^12.1.6",
     "nodemon": "^2.0.15",
-    "sass": "^1.50.1",
-    "typescript": "^4.7.2",
-    "vercel": "^24.2.4"
+    "sass": "^1.52.2",
+    "typescript": "^4.7.3",
+    "vercel": "^25.0.1"
   }
 }
