@@ -11,26 +11,26 @@
     "dev": "concurrently \"yarn run server\" \"yarn run develop\""
   },
   "dependencies": {
-    "@apollo/client": "^3.6.6",
+    "@apollo/client": "^3.6.9",
     "axios": "^0.27.2",
-    "concurrently": "^7.1.0",
+    "concurrently": "^7.4.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "express-graphql": "^0.12.0",
-    "graphql": "^16.5.0",
-    "next": "^12.1.6",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "graphql": "^16.6.0",
+    "next": "^12.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.40",
-    "@types/react": "^18.0.12",
-    "@types/react-dom": "^18.0.5",
-    "eslint": "^8.17.0",
-    "eslint-config-next": "^12.1.6",
-    "nodemon": "^2.0.15",
-    "sass": "^1.52.2",
-    "typescript": "^4.7.3",
-    "vercel": "^25.0.1"
+    "@types/node": "^18.7.16",
+    "@types/react": "^18.0.19",
+    "@types/react-dom": "^18.0.6",
+    "eslint": "^8.23.1",
+    "eslint-config-next": "^12.3.0",
+    "nodemon": "^2.0.19",
+    "sass": "^1.54.9",
+    "typescript": "^4.8.3",
+    "vercel": "^28.2.4"
   }
 }
